@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct employee{
+int empno, salary;
+char emplname[100], dept_name[100];
+};
+void print_employee_details(struct employee *ar);
+int main()
+{ struct employee list[2];
+printf("Enter the employee details:\n");
+for(int i=0;i<2;i++){
+printf("enter the employee number:\n");
+scanf("%d",&list[i].empno);
+printf("enter the employee salary:\n");
+scanf("%d",&list[i].salary);
+printf("enter the employee name without space:\n");
+scanf("%s",&list[i].emplname);
+printf("enter the employee department without space:\n");
+scanf("%s",&list[i].dept_name);
+}
+
+print_employee_details(list);
+
+    return 0;
+}
+void print_employee_details(struct employee *ar){
+printf("EmpNo Empname        EmplDept    Salary\n");
+for(int i=0;i<2;i++){
+printf("%d ",(ar+i)->empno);
+printf("%s\t",(ar+i)->emplname);
+printf("%s\t",(ar+i)->dept_name);
+printf("%d",(ar+i)->salary);
+printf("\n");
+}
+}
